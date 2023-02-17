@@ -7,4 +7,4 @@ WORKDIR /files
 RUN pip install pipenv cdk8s-plus-25
 
 ADD entrypoint-python.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+
