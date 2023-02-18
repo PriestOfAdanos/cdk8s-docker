@@ -8,4 +8,4 @@ RUN pip install pipenv cdk8s-plus-25
 RUN curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.0/install.sh | sh
 RUN mv kubectl-crossplane /usr/local/bin
 ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/bin/sh"]
+CMD ["/bin/sh"]
