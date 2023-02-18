@@ -5,6 +5,7 @@ RUN yarn global add cdk8s-cli && yarn cache clean
 RUN mkdir /files 
 WORKDIR /files
 RUN pip install pipenv cdk8s-plus-25
-
-ADD entrypoint-python.sh /entrypoint.sh
-
+RUN curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.0/install.sh | sh
+RUN mv kubectl-crossplane /usr/local/bin
+ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/bin/sh"]
