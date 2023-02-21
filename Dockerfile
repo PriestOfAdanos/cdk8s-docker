@@ -1,6 +1,6 @@
 FROM python:3.11-alpine
 
-RUN apk --no-cache add yarn npm git
+RUN apk --no-cache add yarn npm git curl
 RUN yarn global add cdk8s-cli && yarn cache clean
 RUN mkdir /files 
 WORKDIR /files
