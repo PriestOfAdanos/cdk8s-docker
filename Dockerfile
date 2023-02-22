@@ -13,7 +13,9 @@ RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Install vCluster
 RUN curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/download/v0.13.0/vcluster-linux-amd64" && install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
 # Install Helm
-RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | sh
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+RUN chmod 700 get_helm.sh
+RUN ./get_helm.sh
 
 # RUN mv kubectl-crossplane /usr/local/bin
 RUN curl -fsSL https://get.pulumi.com | sh
