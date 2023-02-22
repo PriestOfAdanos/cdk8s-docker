@@ -7,8 +7,6 @@ WORKDIR /files
 RUN pip install pipenv cdk8s-plus-25
 RUN curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.0/install.sh | sh
  # install curl
-RUN apt update -y
-RUN apt install curl -y
 # install kubectl
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
