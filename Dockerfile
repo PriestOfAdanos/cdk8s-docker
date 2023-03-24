@@ -15,7 +15,5 @@ RUN curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/download/v
 RUN curl -fsSL https://get.pulumi.com | sh
 RUN /root/.pulumi/bin/pulumi plugin install resource kubernetes v3.0.0
 RUN curl -i https://github.com/pulumi/kube2pulumi/releases/download/v0.0.12/kube2pulumi-v0.0.12-darwin-amd64.tar.gz -o kube2pulumi.tar.gz
-RUN go get -u github.com/astaxie/beego
-RUN go get -u github.com/beego/bee
 ADD entrypoint.sh /entrypoint.sh
 CMD ["/bin/sh"]
